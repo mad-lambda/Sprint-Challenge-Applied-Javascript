@@ -8,7 +8,7 @@
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
 
-function tab(data){
+function tabData(data){
     let container = document.createElement('div');
 
     container.textContent = data;
@@ -23,7 +23,7 @@ axios
     .get("https://lambda-times-backend.herokuapp.com/topics")
     .then(response => {
         response.data.topics.forEach(article => {
-            topics.appendChild(tab(article));
+            topics.appendChild(tabData(article));
         })
     })
     .catch(err => {
